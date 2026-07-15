@@ -1,0 +1,148 @@
+time="2026-07-15T21:32:06+05:30" level=info msg="running terraform init..."
+time="2026-07-15T21:32:06+05:30" level=info msg="[INFO] running Terraform command: C:\\Users\\kaurnavjot\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Hashicorp.Terraform_Microsoft.Winget.Source_8wekyb3d8bbwe\\terraform.exe version -json"
+{
+  "terraform_version": "1.15.8",
+  "platform": "windows_amd64",
+  "provider_selections": {
+    "registry.terraform.io/azure/azapi": "2.10.0"
+  },
+  "terraform_outdated": false
+}
+time="2026-07-15T21:32:06+05:30" level=info msg="[INFO] running Terraform command: C:\\Users\\kaurnavjot\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Hashicorp.Terraform_Microsoft.Winget.Source_8wekyb3d8bbwe\\terraform.exe init -no-color -force-copy -input=false -backend=true -get=true -upgrade=false"
+Initializing the backend...
+
+Initializing provider plugins...
+- Reusing previous version of azure/azapi from the dependency lock file
+- Using previously-installed azure/azapi v2.10.0
+
+
+Terraform has been successfully initialized!
+time="2026-07-15T21:32:08+05:30" level=info msg="running terraform plan to check the changes..."
+time="2026-07-15T21:32:08+05:30" level=info msg="[INFO] running Terraform command: C:\\Users\\kaurnavjot\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Hashicorp.Terraform_Microsoft.Winget.Source_8wekyb3d8bbwe\\terraform.exe plan -no-color -input=false -detailed-exitcode -lock-timeout=0s -out=tfplan -lock=true -parallelism=10 -refresh=true"
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azapi_resource.qumuloFileSystem will be created
+  + resource "azapi_resource" "qumuloFileSystem" {
+      + body                      = {
+          + properties = {
+              + adminPassword      = (sensitive value)
+              + availabilityZone   = "1"
+              + delegatedSubnetId  = (known after apply)
+              + marketplaceDetails = {
+                  + offerId     = "qumulo-saas-mpp"
+                  + planId      = "azure-native-qumulo-v3"
+                  + publisherId = "qumulo1584033880660"
+                }
+              + storageSku         = "Cold_LRS"
+              + userDetails        = {
+                  + email = "test@test.com"
+                }
+            }
+        }
+      + id                        = (known after apply)
+      + ignore_casing             = false
+      + ignore_missing_property   = true
+      + ignore_null_property      = false
+      + location                  = "westeurope"
+      + name                      = "acctest0001"
+      + output                    = (known after apply)
+      + parent_id                 = (known after apply)
+      + response_export_values    = [
+          + "*",
+        ]
+      + schema_validation_enabled = false
+      + sensitive_body            = (write-only attribute)
+      + tags                      = {
+          + "environment" = "terraform-acctests"
+          + "some_key"    = "some-value"
+        }
+      + type                      = "Qumulo.Storage/fileSystems@2024-06-19"
+    }
+
+  # azapi_resource.resourceGroup will be created
+  + resource "azapi_resource" "resourceGroup" {
+      + id                        = (known after apply)
+      + ignore_casing             = false
+      + ignore_missing_property   = true
+      + ignore_null_property      = false
+      + location                  = "westeurope"
+      + name                      = "acctest0001"
+      + output                    = (known after apply)
+      + parent_id                 = "/subscriptions/a8b81ef0-9c6a-4ff2-b675-081212bab47b"
+      + schema_validation_enabled = true
+      + sensitive_body            = (write-only attribute)
+      + type                      = "Microsoft.Resources/resourceGroups@2020-06-01"
+    }
+
+  # azapi_resource.subnet will be created
+  + resource "azapi_resource" "subnet" {
+      + body                      = {
+          + properties = {
+              + addressPrefix                     = "10.0.1.0/24"
+              + defaultOutboundAccess             = true
+              + delegations                       = [
+                  + {
+                      + name       = "delegation"
+                      + properties = {
+                          + actions     = [
+                              + "Microsoft.Network/virtualNetworks/subnets/join/action",
+                            ]
+                          + serviceName = "Qumulo.Storage/fileSystems"
+                        }
+                    },
+                ]
+              + privateEndpointNetworkPolicies    = "Disabled"
+              + privateLinkServiceNetworkPolicies = "Enabled"
+            }
+        }
+      + id                        = (known after apply)
+      + ignore_casing             = false
+      + ignore_missing_property   = true
+      + ignore_null_property      = false
+      + location                  = "westeurope"
+      + name                      = "acctest0001"
+      + output                    = (known after apply)
+      + parent_id                 = (known after apply)
+      + response_export_values    = [
+          + "*",
+        ]
+      + schema_validation_enabled = false
+      + sensitive_body            = (write-only attribute)
+      + type                      = "Microsoft.Network/virtualNetworks/subnets@2024-05-01"
+    }
+
+  # azapi_resource.vnet will be created
+  + resource "azapi_resource" "vnet" {
+      + body                      = {
+          + properties = {
+              + addressSpace                = {
+                  + addressPrefixes = [
+                      + "10.0.0.0/16",
+                    ]
+                }
+              + privateEndpointVNetPolicies = "Disabled"
+              + subnets                     = []
+            }
+        }
+      + id                        = (known after apply)
+      + ignore_casing             = false
+      + ignore_missing_property   = true
+      + ignore_null_property      = false
+      + location                  = "westeurope"
+      + name                      = "acctest0001"
+      + output                    = (known after apply)
+      + parent_id                 = (known after apply)
+      + response_export_values    = [
+          + "*",
+        ]
+      + schema_validation_enabled = false
+      + sensitive_body            = (write-only attribute)
+      + type                      = "Microsoft.Network/virtualNetworks@2024-05-01"
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.

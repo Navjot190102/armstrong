@@ -1,0 +1,8 @@
+time="2026-07-15T21:33:09+05:30" level=info msg="cleaning up resources..."
+time="2026-07-15T21:33:11+05:30" level=warning msg="new pass report from state: state is nil"
+time="2026-07-15T21:33:11+05:30" level=warning msg="new id address mapping from state: state is nil"
+time="2026-07-15T21:33:11+05:30" level=info msg="running terraform init..."
+time="2026-07-15T21:33:13+05:30" level=info msg="running terraform destroy..."
+time="2026-07-15T21:33:14+05:30" level=info msg="all resources are cleaned up"
+time="2026-07-15T21:33:14+05:30" level=info msg="---------------- Summary ----------------"
+time="2026-07-15T21:33:14+05:30" level=info msg="0 resources passed the cleanup tests."
