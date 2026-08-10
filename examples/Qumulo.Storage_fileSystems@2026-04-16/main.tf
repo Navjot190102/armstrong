@@ -98,7 +98,8 @@ resource "azapi_resource" "qumuloFileSystem" {
         planId      = "azure-native-qumulo-v3"
         publisherId = "qumulo1584033880660"
       }
-      storageSku = "Cold_LRS"
+      performanceTier = "Standard"
+      storageSku      = "Cold_LRS"
       userDetails = {
         email = "test@test.com"
       }

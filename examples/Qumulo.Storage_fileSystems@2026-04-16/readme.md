@@ -13,7 +13,7 @@ Additional `properties` on the file system resource:
 
 | Property | Notes |
 |----------|-------|
-| `performanceTier` | new, optional |
+| `performanceTier` | new, optional (covered in `main.tf`, value `Standard`) |
 | `clusterLoginUrl` | new, optional |
 | `privateIPs` | new, optional (array) |
 | `marketplaceDetails.termUnit` | new, optional |
